@@ -19,6 +19,7 @@
 - [Install](#install)
 - [Example](#example)
 - [Usage](#usage)
+- [Related](#related)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -94,6 +95,10 @@ Type: `string`<br>
 Default: `'Release'`
 
 Commit message for the changes.
+
+<h2 align="center">Related</h2>
+
+- [send-to-git-cli](https://github.com/ramasilveyra/send-to-git-cli) CLI for this module.
 
 <h2 align="center">Contribute</h2>
 
