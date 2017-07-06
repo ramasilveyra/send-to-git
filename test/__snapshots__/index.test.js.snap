@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`while using sendToGit() with invalid params should throw if "destination" param is the same as the temp folder 1`] = `"\\"destination\\" can't be the base folder of the temp dir."`;
+
+exports[`while using sendToGit() with invalid params should throw with an absolute path in "destination" param 1`] = `"\\"destination\\" needs to be a relative path, actual value \\"/foo/bar\\"."`;
+
+exports[`while using sendToGit() with invalid params should throw without all the required params 1`] = `"\\"source\\", \\"destination\\" and \\"remote\\" are required"`;
+
+exports[`while using sendToGit() with invalid params should throw without all the required params 2`] = `"\\"source\\", \\"destination\\" and \\"remote\\" are required"`;
+
+exports[`while using sendToGit() with invalid params should throw without all the required params 3`] = `"\\"source\\", \\"destination\\" and \\"remote\\" are required"`;
+
+exports[`while using sendToGit() with invalid params should throw without all the required params 4`] = `"\\"source\\", \\"destination\\" and \\"remote\\" are required"`;
+
+exports[`while using sendToGit() with invalid params should throw without all the required params 5`] = `"\\"source\\", \\"destination\\" and \\"remote\\" are required"`;
