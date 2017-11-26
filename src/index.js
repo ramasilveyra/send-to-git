@@ -16,7 +16,7 @@ import copy from './copy';
  * @returns {Promise}
  */
 export default async function sendToGit(source, destination, remote, options = {}) {
-  if (!source || source.length === 0 || !destination || !remote) {
+  if (!source || source.length === 0 || (!destination && destination !== '') || !remote) {
     throw new Error('"source", "destination" and "remote" are required');
   }
 
@@ -26,16 +26,15 @@ export default async function sendToGit(source, destination, remote, options = {
 
   const tempDir = getTempDir();
   const to = path.resolve(tempDir, destination);
-  if (to === tempDir) {
-    throw new Error(`"destination" can't be the base folder of the temp dir.`);
-  }
   const from = path.resolve(process.cwd(), source);
   const commitMessage = options.commitMessage || 'Files added';
   const branch = options.branch || 'master';
+  const deleteGlob =
+    to === tempDir ? [path.resolve(to, '**/*'), `!${path.resolve(to, '.git/**/*')}`] : to;
 
   await del(tempDir, { force: true });
   await execa('git', ['clone', '--depth', '1', remote, tempDir]);
-  await del(to, { force: true });
+  await del(deleteGlob, { force: true });
   await copy(from, to);
   const gitStatus = await execa('git', ['status'], { cwd: tempDir });
   const isNothingToCommit = gitStatus.stdout.indexOf('nothing to commit') > -1;
