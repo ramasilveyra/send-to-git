@@ -69,7 +69,7 @@ Glob or array of globs to read.
 Type: `string`<br>
 **Required**
 
-Relative destination path.
+Relative destination path. Empty string (`''`) denotes the root of the repository.
 
 ### remote
 
